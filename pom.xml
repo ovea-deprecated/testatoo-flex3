@@ -1,0 +1,101 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.testatoo</groupId>
+        <artifactId>testatoo</artifactId>
+        <version>3</version>
+    </parent>
+
+    <groupId>org.testatoo.cartridge</groupId>
+    <artifactId>testatoo-flex3</artifactId>
+    <version>1.0-rc1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>testatoo-flex3</name>
+    <description>Testatoo Flex3 Cartridge</description>
+
+    <scm>
+        <connection>scm:git:git@github.com:Ovea/${project.name}.git</connection>
+        <developerConnection>scm:git:git@github.com:Ovea/${project.name}.git</developerConnection>
+        <url>http://github.com/Ovea/${project.name}</url>
+    </scm>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <argLine>-Xmx512m</argLine>
+                    <argLine>-XX:MaxPermSize=128M</argLine>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>ci</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <argLine>-Xmx512m</argLine>
+                            <argLine>-XX:MaxPermSize=128M</argLine>
+                            <argLine>-DCI=true</argLine>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.testatoo</groupId>
+            <artifactId>testatoo-core</artifactId>
+            <version>1.0-rc1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testatoo.openqa</groupId>
+            <artifactId>selenium-java-client-driver</artifactId>
+            <version>1.0.2_20090715</version>
+        </dependency>
+
+        <!-- testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>1.8.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testatoo</groupId>
+            <artifactId>testatoo-config</artifactId>
+            <version>1.0-rc1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testatoo</groupId>
+            <artifactId>testatoo-selenium</artifactId>
+            <version>1.0-rc1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testatoo.container</groupId>
+            <artifactId>testatoo-container-jetty</artifactId>
+            <version>1.0-rc1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

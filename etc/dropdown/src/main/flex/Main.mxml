@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!--
+
+    Copyright (C) 2008 Ovea <dev@testatoo.org>
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+
+
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
+                creationComplete="onCreationComplete()">
+
+    <mx:Script>
+        <![CDATA[
+        import org.testatoo.cartridge.flexagent.FlexAgent;
+
+        private var flexAgent:FlexAgent;
+
+        [Bindable]
+        private var _states:Array = [{label:"Alabama", data:"AL"}, {label:"Alaska", data:"AK"}, {label:"Arizona", data:"AZ"},
+            {label:"Arkansas", data:"AR"}, {label:"California", data:"CA"}, {label:"Colorado", data:"CO"},
+            {label:"Connecticut", data:"CT"}, {label:"Delaware", data:"DE"}, {label:"District of Columbia", data:"DC"},
+            {label:"Florida", data:"FL"}, {label:"Georgia", data:"GA"}, {label:"Hawaii", data:"HI"},
+            {label:"Idaho", data:"ID"}, {label:"Illinois", data:"IL"}, {label:"Indiana", data:"IN"},
+            {label:"Iowa", data:"IA"}, {label:"Kansas", data:"KS"}, {label:"Kentucky", data:"KY"},
+            {label:"Louisiana", data:"LA"}, {label:"Maine", data:"ME"}, {label:"Maryland", data:"MD"},
+            {label:"Massachusetts", data:"MA"}, {label:"Michigan", data:"MI"}, {label:"Minnesota", data:"AK"},
+            {label:"Mississippi", data:"MS"}, {label:"Missouri", data:"MO"}, {label:"Montana", data:"MT"},
+            {label:"Nebraska", data:"NE"}, {label:"Nevada", data:"NV"}, {label:"New Hampshire", data:"NH"},
+            {label:"New Jersey", data:"NJ"}, {label:"New Mexico", data:"NM"}, {label:"New York", data:"NY"},
+            {label:"North Carolina", data:"NC"}, {label:"North Dakota", data:"ND"}, {label:"Ohio", data:"OH"},
+            {label:"Oklahoma", data:"OK"}, {label:"Oregon", data:"OR"}, {label:"Pennsylvania", data:"PA"},
+            {label:"Rhode Island", data:"RI"}, {label:"South Carolina", data:"SC"}, {label:"South Dakota", data:"SD"},
+            {label:"Tennessee", data:"TN"}, {label:"Texas", data:"TX"}, {label:"Utah", data:"UT"},
+            {label:"Vermont", data:"VT"}, {label:"Virginia", data:"VA"}, {label:"Washington", data:"WA"},
+            {label:"West Virginia", data:"WV"}, {label:"Wisconsin", data:"WI"}, {label:"Wyoming", data:"WY"}
+        ];
+
+        private function onCreationComplete():void {
+            flexAgent = new FlexAgent(this);
+        }
+
+        ]]>
+    </mx:Script>
+
+    <mx:Label text="States:"/>
+    <mx:ComboBox id="dropdown" dataProvider="{_states}"/>
+
+    <mx:FormItem label="USA States:">
+        <mx:ComboBox id="dropdown_disabled" dataProvider="{_states}" enabled="false"/>
+    </mx:FormItem>
+
+    <mx:ComboBox id="dropdown_hidden" dataProvider="{_states}" visible="false"/>
+
+    <mx:CheckBox id="componentError" label="MyLabel"/>
+
+</mx:Application>
