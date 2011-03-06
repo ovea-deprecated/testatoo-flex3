@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.testatoo</groupId>
         <artifactId>testatoo</artifactId>
-        <version>3</version>
+        <version>4</version>
     </parent>
 
     <groupId>org.testatoo.cartridge</groupId>
@@ -57,7 +57,7 @@
         <dependency>
             <groupId>org.testatoo</groupId>
             <artifactId>testatoo-core</artifactId>
-            <version>1.0-rc1</version>
+            <version>1.0-rc2-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.testatoo.openqa</groupId>
@@ -81,19 +81,19 @@
         <dependency>
             <groupId>org.testatoo</groupId>
             <artifactId>testatoo-config</artifactId>
-            <version>1.0-rc1</version>
+            <version>1.0-rc2-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.testatoo</groupId>
             <artifactId>testatoo-selenium</artifactId>
-            <version>1.0-rc1</version>
+            <version>1.0-rc2-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.testatoo.container</groupId>
             <artifactId>testatoo-container-jetty</artifactId>
-            <version>1.0-rc1</version>
+            <version>1.0-rc2-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
