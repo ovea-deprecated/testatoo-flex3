@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package org.testatoo.cartridge.core;
+package org.testatoo.core;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.testatoo.cartridge.WebTest;
+import org.testatoo.WebTest;
 import org.testatoo.cartridge.flex3.component.AlertBox;
-import org.testatoo.core.ComponentException;
 import org.testatoo.core.component.Button;
 
 import static org.hamcrest.MatcherAssert.assertThat;

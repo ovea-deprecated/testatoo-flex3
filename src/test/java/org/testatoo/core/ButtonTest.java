@@ -14,61 +14,63 @@
  * limitations under the License.
  */
 
-package org.testatoo.cartridge.core;
+package org.testatoo.core;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
-import org.testatoo.cartridge.WebTest;
-import org.testatoo.core.ComponentException;
-import org.testatoo.core.component.Panel;
+import org.testatoo.WebTest;
+import org.testatoo.core.component.Button;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.fail;
 import static org.testatoo.cartridge.flex3.Language.workOn;
 import static org.testatoo.core.ComponentFactory.component;
 import static org.testatoo.core.ComponentFactory.page;
-import static org.testatoo.core.matcher.Matchers.*;
 
-public class PanelTest extends WebTest {
+public class ButtonTest extends WebTest {
 
     @Before
     public void setUp() {
-        page().open("component/panel/Panel.html");
+        page().open("component/button/Button.html");
         workOn("FlexApplication");
     }
 
     @Test
-    public void can_find_panel_by_id() {
-        component(Panel.class, "panel");
+    public void can_find_button_by_id() {
+        component(Button.class, "button");
 
         try {
-            component(Panel.class, "otherPanel");
+            component(Button.class, "otherButton");
             fail();
         } catch (ComponentException e) {
-            assertThat(e.getMessage(), is("Cannot find component defined by id=otherPanel"));
+            assertThat(e.getMessage(), is("Cannot find component defined by id=otherButton"));
         }
     }
 
     @Test
-    public void exception_thrown_if_component_not_a_panel() {
+    public void exception_thrown_if_component_not_a_button() {
         try {
-            component(Panel.class, "componentError");
+            component(Button.class, "componentError");
             fail();
         } catch (ComponentException e) {
-            assertThat(e.getMessage(), is("The component with id=componentError is not a Panel but a CheckBox"));
+            assertThat(e.getMessage(), is("The component with id=componentError is not a Button but a CheckBox"));
         }
     }
 
     @Test
-    public void can_test_title() {
-        assertThat(component(Panel.class, "panel"), has(title("PanelTitle")));
+    public void can_obtain_button_text() {
+        assertThat(component(Button.class, "button").text(), is("Button"));
+    }
+
+    @Test
+    public void can_get_the_icon() {
+        assertThat(component(Button.class, "button").icon(), containsString("forward_png"));
     }
 
     @Test
     public void test_toString() {
-        assertThat(component(Panel.class, "panel").toString(), is("class org.testatoo.core.component.Panel with state : enabled:true, visible:true, title:PanelTitle"));
+        assertThat(component(Button.class, "button").toString(), containsString("class org.testatoo.core.component.Button with state : enabled:true, visible:true, text:Button"));
     }
 }

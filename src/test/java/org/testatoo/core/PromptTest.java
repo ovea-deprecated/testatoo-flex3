@@ -14,14 +14,11 @@
  * limitations under the License.
  */
 
-package org.testatoo.cartridge;
+package org.testatoo.core;
 
-import org.junit.runner.RunWith;
-import org.testatoo.config.annotation.TestatooModules;
-import org.testatoo.config.junit.TestatooJunitRunner;
+import org.junit.Ignore;
+import org.testatoo.WebTest;
 
-@RunWith(TestatooJunitRunner.class)
-@TestatooModules(MainModule.class)
-public abstract class WebTest {
-
+@Ignore
+public class PromptTest extends WebTest {
 }

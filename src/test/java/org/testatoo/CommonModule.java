@@ -14,11 +14,21 @@
  * limitations under the License.
  */
 
-package org.testatoo.cartridge.core;
+package org.testatoo;
 
-import org.junit.Ignore;
-import org.testatoo.cartridge.WebTest;
+import org.testatoo.config.AbstractTestatooModule;
+import org.testatoo.config.Scope;
 
-@Ignore
-public class WindowTest extends WebTest {
+import static org.testatoo.container.TestatooContainer.JETTY;
+
+final class CommonModule extends AbstractTestatooModule {
+    @Override
+    protected void configure() {
+        containers().register(createContainer()
+                .implementedBy(JETTY)
+                .webappRoot("src/test/webapp")
+                .port(7896)
+                .build())
+                .scope(Scope.TEST_SUITE);
+    }
 }

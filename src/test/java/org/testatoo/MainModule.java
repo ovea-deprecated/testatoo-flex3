@@ -14,11 +14,15 @@
  * limitations under the License.
  */
 
-package org.testatoo.cartridge.core;
+package org.testatoo;
 
-import org.junit.Ignore;
-import org.testatoo.cartridge.WebTest;
+import org.testatoo.config.AbstractTestatooModule;
 
-@Ignore
-public class FileDialogTest extends WebTest {
+public class MainModule extends AbstractTestatooModule {
+
+    @Override
+    protected void configure() {
+        install(new CommonModule());
+        install(new LocalModule());
+    }
 }

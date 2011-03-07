@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package org.testatoo.cartridge.core;
+package org.testatoo.core;
 
 import org.junit.Ignore;
-import org.testatoo.cartridge.WebTest;
+import org.testatoo.WebTest;
 
 @Ignore
-public class PromptTest extends WebTest {
+public class FileDialogTest extends WebTest {
 }

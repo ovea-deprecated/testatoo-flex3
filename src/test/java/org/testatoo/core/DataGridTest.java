@@ -14,18 +14,14 @@
  * limitations under the License.
  */
 
-package org.testatoo.cartridge.core;
+package org.testatoo.core;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.testatoo.cartridge.WebTest;
-import org.testatoo.core.ComponentException;
-import org.testatoo.core.Selection;
+import org.testatoo.WebTest;
 import org.testatoo.core.component.datagrid.Column;
 import org.testatoo.core.component.datagrid.DataGrid;
 import org.testatoo.core.component.datagrid.Row;
-
-import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -34,7 +30,6 @@ import static org.junit.Assert.fail;
 import static org.testatoo.cartridge.flex3.Language.workOn;
 import static org.testatoo.core.ComponentFactory.component;
 import static org.testatoo.core.ComponentFactory.page;
-import static org.testatoo.core.matcher.Matchers.*;
 
 public class DataGridTest extends WebTest {
 

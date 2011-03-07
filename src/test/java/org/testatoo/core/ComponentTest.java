@@ -14,16 +14,13 @@
  * limitations under the License.
  */
 
-package org.testatoo.cartridge.core;
+package org.testatoo.core;
 
 import org.junit.Ignore;
-import org.junit.Test;
-import org.testatoo.cartridge.WebTest;
-import org.testatoo.core.component.Panel;
+import org.testatoo.WebTest;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.testatoo.core.ComponentFactory.component;
 
 @Ignore
 public class ComponentTest extends WebTest {

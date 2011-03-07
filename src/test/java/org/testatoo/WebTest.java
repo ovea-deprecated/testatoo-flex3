@@ -14,21 +14,14 @@
  * limitations under the License.
  */
 
-package org.testatoo.cartridge;
+package org.testatoo;
 
-import org.testatoo.config.AbstractTestatooModule;
-import org.testatoo.config.Scope;
+import org.junit.runner.RunWith;
+import org.testatoo.config.annotation.TestatooModules;
+import org.testatoo.config.junit.TestatooJunitRunner;
 
-import static org.testatoo.container.TestatooContainer.JETTY;
+@RunWith(TestatooJunitRunner.class)
+@TestatooModules(MainModule.class)
+public abstract class WebTest {
 
-final class CommonModule extends AbstractTestatooModule {
-    @Override
-    protected void configure() {
-        containers().register(createContainer()
-                .implementedBy(JETTY)
-                .webappRoot("src/test/webapp")
-                .port(7896)
-                .build())
-                .scope(Scope.TEST_SUITE);
-    }
 }

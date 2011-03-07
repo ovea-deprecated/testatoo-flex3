@@ -14,15 +14,11 @@
  * limitations under the License.
  */
 
-package org.testatoo.cartridge;
+package org.testatoo.core;
 
-import org.testatoo.config.AbstractTestatooModule;
+import org.junit.Ignore;
+import org.testatoo.WebTest;
 
-public class MainModule extends AbstractTestatooModule {
-
-    @Override
-    protected void configure() {
-        install(new CommonModule());
-        install(new LocalModule());
-    }
+@Ignore
+public class DialogBoxTest extends WebTest {
 }

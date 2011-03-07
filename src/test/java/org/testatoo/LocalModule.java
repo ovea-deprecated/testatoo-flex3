@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.testatoo.cartridge;
+package org.testatoo;
 
 import org.testatoo.config.AbstractTestatooModule;
 import org.testatoo.config.Scope;

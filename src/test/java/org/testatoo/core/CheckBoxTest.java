@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-package org.testatoo.cartridge.core;
+package org.testatoo.core;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.testatoo.cartridge.WebTest;
-import org.testatoo.core.ComponentException;
+import org.testatoo.WebTest;
 import org.testatoo.core.component.CheckBox;
 import org.testatoo.core.input.Mouse;
 
