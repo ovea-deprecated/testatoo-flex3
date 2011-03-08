@@ -219,6 +219,10 @@ public class SeleniumFlexEvaluator extends AbstractEvaluator<Selenium> implement
         if (component instanceof AlertBox)
             return selenium.getEval("window.document['" + flexObjectId() + "'].alertBoxTitle('" + component.id() + "');");
 
+        if (component instanceof Page) {
+            return selenium.getTitle();
+        }
+
         if (component instanceof Column) {
             String[] cmpId = component.id().split(":");
             return selenium.getEval("window.document['" + flexObjectId() + "'].dataGridColumnTitle('" + cmpId[1] + "', " + cmpId[2] + ");");
