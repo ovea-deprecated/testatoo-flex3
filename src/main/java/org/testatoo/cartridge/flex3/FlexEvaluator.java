@@ -25,5 +25,5 @@ public interface FlexEvaluator extends Evaluator<Selenium> {
 
     void workOn(String flexObjectIdentifier);
 
-//    Type flexComponentType(String id);
+    String pageId();
 }

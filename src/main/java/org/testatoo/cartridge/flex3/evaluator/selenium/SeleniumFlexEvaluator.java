@@ -43,6 +43,8 @@ public class SeleniumFlexEvaluator extends AbstractEvaluator<Selenium> implement
     private static final String COLUMN_ALIAS = "testatoo_column";
     private static final String CELL_ALIAS = "testatoo_cell";
 
+    private static final String PAGE_ID = "_PAGE_ID_";
+
     /**
      * Class constructor specifying the used selenium engine
      *
@@ -73,6 +75,11 @@ public class SeleniumFlexEvaluator extends AbstractEvaluator<Selenium> implement
         return name;
     }
 
+    @Override
+    public String pageId() {
+        return PAGE_ID;
+    }
+
     /**
      * @see org.testatoo.cartridge.flex3.FlexEvaluator
      */
@@ -86,8 +93,8 @@ public class SeleniumFlexEvaluator extends AbstractEvaluator<Selenium> implement
      */
     @Override
     public Boolean existComponent(String id) {
-        if (id.equals("html"))
-            return selenium.isElementPresent("xpath=/" + id);
+        if (id.equals(PAGE_ID))
+            return true;
 
         if (id.contains(ROW_ALIAS) || id.contains(COLUMN_ALIAS) || id.contains(CELL_ALIAS)) {
             return true;

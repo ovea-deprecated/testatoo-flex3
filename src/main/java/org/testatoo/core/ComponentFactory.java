@@ -26,7 +26,7 @@ import java.lang.reflect.InvocationTargetException;
 public class ComponentFactory {
 
     public static Page page() {
-        return component(Page.class, "html");
+        return component(Page.class, evaluator().pageId());
     }
 
     public static <T extends Component> T component(Class<T> componentType, String id) {
