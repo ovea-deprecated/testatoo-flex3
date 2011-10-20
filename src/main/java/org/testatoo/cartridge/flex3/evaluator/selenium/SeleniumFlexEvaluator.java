@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static java.lang.Boolean.FALSE;
 import static org.testatoo.core.ComponentType.*;
 
 public class SeleniumFlexEvaluator extends AbstractEvaluator<Selenium> implements FlexEvaluator {
@@ -498,11 +499,19 @@ public class SeleniumFlexEvaluator extends AbstractEvaluator<Selenium> implement
 //                + "'].flexComponentType('" + id + "');"));
 //    }
 //
-//    public Boolean contains(Container container, Component component) {
-//        return Boolean.valueOf(selenium.getEval("window.document['" + flexObjectId() + "'].contain('"
-//                + ((Component) container).id() + "', '" + component.id() + "');"));
-//    }
-//
+    @Override
+    public Boolean contains(Container container, Component... component) {
+        boolean containsAllElements = true;
+        for (Component cmp : component) {
+            if (!Boolean.valueOf(selenium.getEval("window.document['" + flexObjectId() + "'].contain('"
+                + ((Component) container).id() + "', '" + cmp.id() + "');"))) {
+                containsAllElements = false;
+            }
+        }
+        return containsAllElements;
+    }
+
+
 //    public void unselect(String value, ListModel listModel) {
 //    }
 //
